@@ -15,14 +15,12 @@
 	},
 	"devDependencies": {
 		"browserify": "^13.0.1",
-		"uglify-js": "mishoo/UglifyJS2#harmony",
-		"wzrd": "^1.4"
+		"uglify-js": "mishoo/UglifyJS2#harmony"
 	},
 	"scripts": {
 		"bundle": "browserify index.js -o bundle.js",
 		"uglify": "uglifyjs -mc --screw-ie8 -o bundle.min.js -- bundle.js",
 		"build": "npm run bundle; npm run uglify",
-		"prepublish": "npm run build",
-		"dev": "wzrd index.js:bundle.js -- --debug"
+		"prepublish": "npm run build"
 	}
 }

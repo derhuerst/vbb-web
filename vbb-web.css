@@ -8,10 +8,7 @@ body {
 
 
 h1, h2 { font-weight: 300 }
-h1 {
-	margin: 2rem 0 1rem 0; font-size: 2rem;
-	text-align: center; color: #777;
-}
+h1 { margin: 2rem 0 1rem 0; font-size: 2rem; color: #777 }
 h2 { margin: 1.5rem 0 1rem 0; font-size: 1.5rem; color: #555; }
 
 p { margin: 1rem 0 }
@@ -23,26 +20,27 @@ a:focus { outline: none; text-decoration: underline }
 
 
 
-input[type="text"], button {
-	margin: 1rem 0; padding: .3em;
+input, button {
+	display: block; margin: 1rem 0; padding: .3em;
 	box-sizing: border-box; width: 100%;
 	font-size: 100%; text-align: center;
-	color: inherit; appearance: none;
 }
 
-input[type="text"] {
+input[type="text"], input[type="submit"], button { appearance: none }
+
+input {
 	background-color: transparent;
 	border: .1em solid #777;
 }
-input[type="text"]:focus { outline: none; border-color: #c0392b }
+input:focus { outline: none; border-color: #e74c3c }
 
-button {
+input[type="submit"], button {
 	color: white;
-	border: none; background-color: #c0392b;
+	border: none; background-color: #e74c3c;
 	cursor: pointer;
 }
-button:active { background-color: #b0291b }
-button:focus {
+input[type="submit"]:active, button:active { background-color: #b0291b }
+input[type="submit"]:focus, button:focus {
 	color: inherit; outline: none;
 	border: .1em solid #b0291b;
 	background-color: transparent;
@@ -59,12 +57,16 @@ ul { list-style-type: circle }
 
 
 fieldset { margin: 1rem 0; padding: 0; border: none }
+
 fieldset.completion > input { margin-top: 0; margin-bottom: 0 }
+
 fieldset.completion > ul {
 	margin: 0 .1em;
 	border: .1em solid #999; border-top-width: 0;
 	list-style: none; background-color: #f7f7f7;
 }
+fieldset.completion > ul:empty { border: none }
+
 fieldset.completion > ul > li {
 	cursor: pointer; padding: .3em;
 }
