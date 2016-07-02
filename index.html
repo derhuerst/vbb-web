@@ -13,9 +13,14 @@
 		<p class="notification error">Please enable JavaScript.</p>
 	</noscript>
 
-	<fieldset id="location" class="completion">
-		<input type="text" placeholder="search for a location"/>
-	</fieldset>
+	<form action="/departures" method="GET">
+		<fieldset id="station" class="completion">
+			<input class="ui" type="text" placeholder="Search for a station"/>
+			<input class="field" type="hidden" name="station">
+		</fieldset>
+		<input type="text" name="when" value="in 10 min" placeholder="specify a time"/>
+		<input type="submit" value="Show Departures"/>
+	</form>
 
 	<script src="bundle.js"></script>
 </body></html>

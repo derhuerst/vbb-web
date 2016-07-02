@@ -7,12 +7,14 @@ const $ = (s) => document.querySelector(s)
 
 
 
-completion($('#location'), {
+completion($('#station'), {
 	  suggest: (query, cb) => {
 		if (query.length === 0) return cb([])
-		client.locations(query, {identifier: 'vbb-web', results: 5}).then(cb)
+		client.locations(query, {
+			identifier: 'vbb-web', results: 5,
+			stations: true, addresses: false, poi: false
+		}).then(cb)
 	}
-	, text:    (l) => l.name
-	, apply:   (el, l) => el.value = l.name
+	, render:  (l) => l.name
+	, value:   (l) => l.id
 })
-.on('value', (l) => console.log(l))
