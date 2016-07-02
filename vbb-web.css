@@ -47,3 +47,26 @@ button:focus {
 	border: .1em solid #b0291b;
 	background-color: transparent;
 }
+
+
+
+ul, ol {
+	margin: 1rem 0; padding: 0;
+	list-style-type: circle; list-style-position: inside;
+}
+ul { list-style-type: circle }
+
+
+
+fieldset { margin: 1rem 0; padding: 0; border: none }
+fieldset.completion > input { margin-top: 0; margin-bottom: 0 }
+fieldset.completion > ul {
+	margin: 0 .1em;
+	border: .1em solid #999; border-top-width: 0;
+	list-style: none; background-color: #f7f7f7;
+}
+fieldset.completion > ul > li {
+	cursor: pointer; padding: .3em;
+}
+fieldset.completion > ul > li:hover,
+fieldset.completion > ul > li.sey-selected { background-color: #ddd }
