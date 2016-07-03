@@ -1,0 +1,13 @@
+#!/bin/sh
+
+rsync -rav --delete -e 'ssh -i ./.scaleway' \
+	--exclude '.*' \
+	--exclude node_modules \
+	. 'root@vbb-web.jannisr.de:~/vbb-web/'
+
+ssh -i ./.scaleway 'root@vbb-web.jannisr.de' "\
+cd ~/vbb-web
+npm i
+export NODE_ENV=production
+forever stop vbb-web
+forever start -a --uid vbb-web index.js"

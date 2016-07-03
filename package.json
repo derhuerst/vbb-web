@@ -36,6 +36,11 @@
 		"bundle": "browserify client/index.js -o client/index.bundle.js",
 		"uglify": "uglifyjs -mc --screw-ie8 -o client/index.bundle.min.js -- client/index.bundle.js",
 		"build": "npm run icons; npm run clean; npm run bundle; npm run uglify",
-		"prepublish": "npm run build"
+		"prepublish": "npm run build",
+
+		"start":  "forever start --uid vbb-web -a app.js",
+		"stop":   "forever stop vbb-web",
+		"ssh":    "ssh -i ./scaleway root@vbb-web.jannisr.de",
+		"deploy": "./deploy"
 	}
 }
