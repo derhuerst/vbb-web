@@ -4,7 +4,7 @@ const co = require('co-express')
 const stations = require('vbb-stations')
 const api = require('vbb-client')
 
-const template = require('./client/departures.tpl')
+const template = require('./tpl/departures')
 
 
 
