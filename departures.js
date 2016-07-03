@@ -15,7 +15,7 @@ const departures = co(function* (req, res) {
 
 	const when = req.query.when || new Date()
 
-	const deps = yield api.departures(station.id, {when})
+	const deps = yield api.departures(station.id, {when, identifier: 'vbb-web'})
 	res.status(200).end(template(station, deps))
 })
 

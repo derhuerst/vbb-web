@@ -1,11 +1,19 @@
 'use strict'
 
+const fs = require('fs')
 const config = require('config')
 const express = require('express')
 const compression = require('compression')
 const files = require('serve-static')
+const https = require('https')
 
 const departures = require('./departures')
+
+const ssl = {
+	  key:  fs.readFileSync(config.key)
+	, cert: fs.readFileSync(config.cert)
+	, ca:   fs.readFileSync(config.ca)
+}
 
 
 
@@ -15,4 +23,8 @@ app.use(files('./client'))
 
 app.get('/departures', departures)
 
-app.listen(config.port, () => console.info(`Listening on ${config.port}.`))
+
+
+const server = https.createServer(ssl, app)
+server.listen(config.port, () =>
+	console.info(`Listening on ${config.port}.`))
