@@ -8,5 +8,5 @@ npm-debug.log
 config/*
 !config/default.js
 
-client/main.bundle.js
-client/main.bundle.min.js
+client/*.bundle.js
+client/*.bundle.min.js

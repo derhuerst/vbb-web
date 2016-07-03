@@ -28,9 +28,10 @@
 		"uglify-js": "mishoo/UglifyJS2#harmony"
 	},
 	"scripts": {
-		"bundle": "browserify client/main.js -o client/main.bundle.js",
-		"uglify": "uglifyjs -mc --screw-ie8 -o client/main.bundle.min.js -- client/main.bundle.js",
-		"build": "npm run bundle; npm run uglify",
+		"clean":  "rm client/*.bundle.js; rm client/*.bundle.min.js",
+		"bundle": "browserify client/index.js -o client/index.bundle.js",
+		"uglify": "uglifyjs -mc --screw-ie8 -o client/index.bundle.min.js -- client/index.bundle.js",
+		"build": "npm run clean; npm run bundle; npm run uglify",
 		"prepublish": "npm run build"
 	}
 }
