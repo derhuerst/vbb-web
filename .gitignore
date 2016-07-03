@@ -5,5 +5,5 @@ Thumbs.db
 node_modules
 npm-debug.log
 
-bundle.js
-bundle.min.js
+client/main.bundle.js
+client/main.bundle.min.js

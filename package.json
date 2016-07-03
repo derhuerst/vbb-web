@@ -9,16 +9,16 @@
 	"issues":      "https://github.com/derhuerst/vbb-web/issues",
 	"license":     "ISC",
 	"dependencies": {
-		"horsey": "^3",
-		"vbb-client": "^0.3.3"
 	},
 	"devDependencies": {
+		"horsey": "^3",
+		"vbb-client": "^0.3.3",
 		"browserify": "^13.0.1",
 		"uglify-js": "mishoo/UglifyJS2#harmony"
 	},
 	"scripts": {
-		"bundle": "browserify index.js -o bundle.js",
-		"uglify": "uglifyjs -mc --screw-ie8 -o bundle.min.js -- bundle.js",
+		"bundle": "browserify client/main.js -o client/main.bundle.js",
+		"uglify": "uglifyjs -mc --screw-ie8 -o client/main.bundle.min.js -- client/main.bundle.js",
 		"build": "npm run bundle; npm run uglify",
 		"prepublish": "npm run build"
 	}
