@@ -18,6 +18,8 @@ a:hover { text-decoration: underline }
 a:active { text-decoration: underline; color: #3498db }
 a:focus { outline: none; text-decoration: underline }
 
+.icon { display: inline-block; margin: 0 .05em; height: .9em }
+
 
 
 input, button {
@@ -72,3 +74,26 @@ fieldset.completion > ul > li {
 }
 fieldset.completion > ul > li:hover,
 fieldset.completion > ul > li.sey-selected { background-color: #ddd }
+
+
+
+table {
+	margin: 1rem 0; border-spacing: 0; width: 100%;
+	border: 1px solid #eee;
+}
+
+table thead, table tbody tr:nth-child(odd) { background-color: #f7f7f7 }
+table td { border-bottom: 1px solid #eee }
+table tr:last-child td { border-bottom: none }
+
+table thead > tr > th { font-weight: 500; border-bottom: .1em solid #777 }
+
+table th, table td { text-align: left; padding: .3em .3em }
+table th:first-child, table td:first-child { padding-left: .6em }
+table th:last-child, table td:last-child { padding-right: .6em }
+
+table td a, table td a:visited { color: #333 }
+
+
+
+#departures { margin-top: 3rem }
