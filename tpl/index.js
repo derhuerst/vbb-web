@@ -13,7 +13,7 @@ const form = (station) =>
 		completion({
 			  id: 'station', name: 'station'
 			, placeholder: 'search for a station'
-			, text: station.name, value: station.id
+			, text: '', value: ''
 		}),
 		h.input({
 			type: 'text', name: 'when', value: 'in 10 min',
@@ -29,6 +29,7 @@ const page = (station, deps) => [
 	, h.html({lang: 'en'}, [
 		  head(['main.css'])
 		, h.body(null, [
+			  h.h1(null, 'Departures')
 			, enableJS
 			, form(station)
 		])

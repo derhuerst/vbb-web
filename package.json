@@ -3,6 +3,7 @@
 	"description": "A web client for Berlin & Brandenburg public transport.",
 	"version":     "0.1.0",
 	"keywords":    ["vbb", "bvg", "public", "transport", "berlin"],
+	"main":        "app.js",
 	"author": "Jannis R <mail@jannisr.de>",
 	"homepage":    "https://github.com/derhuerst/vbb-web",
 	"repository":  "derhuerst/vbb-web",
