@@ -10,4 +10,4 @@ cd ~/vbb-web
 npm i
 export NODE_ENV=production
 forever stop vbb-web
-forever start -a --uid vbb-web index.js"
+forever start -a --uid vbb-web app.js"

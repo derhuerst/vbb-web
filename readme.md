@@ -15,7 +15,7 @@
 git clone https://github.com/derhuerst/vbb-web.git; cd vbb-web
 npm install
 npm run build
-open index.html
+node app.js
 ```
 
 

@@ -1,7 +1,7 @@
 'use strict'
 
 module.exports = {
-	  port:  3000
+	  ports: {https: 3000, http: 3001}
 	, key:  'device.key'
 	, cert: 'device.crt'
 	, ca:   'root-ca.crt'
