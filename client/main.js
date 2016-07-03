@@ -1,6 +1,6 @@
 'use strict'
 
-const completion = require('./completion')
+const completion = require('./lib/completion')
 const client = require('vbb-client')
 
 const $ = (s) => document.querySelector(s)

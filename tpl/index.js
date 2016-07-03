@@ -1,0 +1,41 @@
+'use strict'
+
+const h = require('pithy')
+
+const completion = require('./lib/completion')
+const enableJS = require('./lib/enable-js')
+const head = require('./lib/head')
+
+
+
+const form = (station) =>
+	h.form({action: 'departures', method: 'GET'}, [
+		completion({
+			  id: 'station', name: 'station'
+			, placeholder: 'search for a station'
+			, text: station.name, value: station.id
+		}),
+		h.input({
+			type: 'text', name: 'when', value: 'in 10 min',
+			placeholder: 'specify a time'
+		}),
+		h.input({type: 'submit', value: 'show departures'})
+	])
+
+
+
+const page = (station, deps) => [
+	  `<!DOCTYPE html>`
+	, h.html({lang: 'en'}, [
+		  head(['main.css'])
+		, h.body(null, [
+			, enableJS
+			, form(station)
+		])
+		, h.script({type: 'application/javascript', src: 'index.bundle.min.js'})
+	])
+].join('\n')
+
+
+
+module.exports = page
