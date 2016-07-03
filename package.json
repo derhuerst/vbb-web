@@ -9,6 +9,10 @@
 	"issues":      "https://github.com/derhuerst/vbb-web/issues",
 	"license":     "ISC",
 	"dependencies": {
+		"pithy": "^0.0.4",
+		"vbb-parse-line": "^0.2",
+		"moment": "^2.13",
+		"vbb-short-station-name": "^0.1"
 	},
 	"devDependencies": {
 		"horsey": "^3",
