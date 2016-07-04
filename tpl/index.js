@@ -2,6 +2,7 @@
 
 const h = require('pithy')
 
+const vbbTelegram = require('./lib/vbb-telegram')
 const completion = require('./lib/completion')
 const enableJS = require('./lib/enable-js')
 const head = require('./lib/head')
@@ -33,6 +34,7 @@ const page = (station, deps) => [
 			  h.h1(null, 'Departures')
 			, enableJS
 			, form(station)
+			, vbbTelegram
 			, footer
 			, h.script({type: 'application/javascript', src: 'index.bundle.min.js'})
 		])
