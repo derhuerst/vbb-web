@@ -5,4 +5,6 @@ module.exports = {
 	, key:  'device.key'
 	, cert: 'device.crt'
 	, ca:   'root-ca.crt'
+	, timezone: 'Europe/Berlin'
+	, locale: 'de'
 }

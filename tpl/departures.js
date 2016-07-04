@@ -1,9 +1,10 @@
 'use strict'
 
 const h = require('pithy')
-const moment = require('moment')
+const moment = require('moment-timezone')
 const shorten = require('vbb-short-station-name')
 
+const cfg = require('config')
 const line = require('./lib/line')
 const head = require('./lib/head')
 
@@ -11,7 +12,9 @@ const head = require('./lib/head')
 
 const time = (t) => h.time({
 	datetime: new Date(t).toISOString()
-}, [moment(t).format('LT')])
+}, [
+	moment(t).tz(cfg.timezone).locale(cfg.locale).format('LT')
+])
 
 const direction = (s) => '→ ' + s
 
