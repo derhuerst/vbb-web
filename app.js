@@ -6,6 +6,7 @@ const express = require('express')
 const forceSSL = require('express-force-ssl')
 const compression = require('compression')
 const files = require('serve-static')
+const nocache = require('nocache')
 const https = require('https')
 const http = require('http')
 
@@ -27,7 +28,7 @@ app.use(compression())
 app.use(files('./client'))
 
 app.get('/', index)
-app.get('/departures', departures)
+app.get('/departures', nocache(), departures)
 
 
 

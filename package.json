@@ -16,6 +16,7 @@
 		"express-force-ssl": "^0.3.2",
 		"compression": "^1.6.2",
 		"serve-static": "^1.11.1",
+		"nocache": "^1",
 		"co-express": "^1.2.1",
 		"vbb-stations": "^1",
 		"vbb-client": "^0.3.3",
