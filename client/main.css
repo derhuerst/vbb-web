@@ -99,3 +99,8 @@ table td a, table td a:visited { color: #333 }
 
 .departures-when { white-space: nowrap }
 .departures-line { white-space: nowrap }
+
+
+
+#footer { margin-top: 8rem; text-align: center }
+#footer .love { font-size: 150%; color: #e74c3c }

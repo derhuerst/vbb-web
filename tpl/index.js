@@ -5,6 +5,7 @@ const h = require('pithy')
 const completion = require('./lib/completion')
 const enableJS = require('./lib/enable-js')
 const head = require('./lib/head')
+const footer = require('./lib/footer')
 
 
 
@@ -27,13 +28,14 @@ const form = (station) =>
 const page = (station, deps) => [
 	  `<!DOCTYPE html>`
 	, h.html({lang: 'en'}, [
-		  head(['main.css'])
-		, h.body(null, [
+		head(['main.css']),
+		h.body(null, [
 			  h.h1(null, 'Departures')
 			, enableJS
 			, form(station)
+			, footer
+			, h.script({type: 'application/javascript', src: 'index.bundle.min.js'})
 		])
-		, h.script({type: 'application/javascript', src: 'index.bundle.min.js'})
 	])
 ].join('\n')
 
