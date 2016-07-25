@@ -16,7 +16,6 @@ const line = (file, line) => {
 		if (parsed.type !== 'regional' && parsed.type !== 'express') {
 			if (parsed.metro) type = 'metro-' + type
 			else if (parsed.express) type = 'express-' + type
-			else if (parsed.night) type = 'night-' + type
 		}
 	}
 	return [icon(file, type), h.a({href: '#'}, line)]

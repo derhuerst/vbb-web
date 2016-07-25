@@ -12,7 +12,8 @@
 ## Installing
 
 ```
-git clone https://github.com/derhuerst/vbb-web.git; cd vbb-web
+git clone https://github.com/derhuerst/vbb-web.git
+cd vbb-web
 npm install
 npm run build
 node app.js
