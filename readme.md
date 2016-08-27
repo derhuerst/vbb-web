@@ -7,6 +7,7 @@
 [![dependency status](https://img.shields.io/david/derhuerst/vbb-web.svg)](https://david-dm.org/derhuerst/vbb-web)
 [![dev dependency status](https://img.shields.io/david/dev/derhuerst/vbb-web.svg)](https://david-dm.org/derhuerst/vbb-web#info=devDependencies)
 ![ISC-licensed](https://img.shields.io/github/license/derhuerst/vbb-web.svg)
+[![gitter channel](https://badges.gitter.im/derhuerst/vbb-rest.svg)](https://gitter.im/derhuerst/vbb-rest)
 
 
 ## Installing
