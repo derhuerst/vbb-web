@@ -1,12 +1,17 @@
 'use strict'
 
+const algolia = require('algoliasearch')
 const completion = require('./lib/completion')
-const stations = require('./lib/stations')
+
+const index = algolia('MVGP4CETQJ', '80552d0732ea6e2f1a0bfd784463392c')
+.initIndex('db-stations-1')
 
 const suggest = (query, cb) => {
 	if (query.length === 0 && localStorage.stations)
 		return cb(JSON.parse(localStorage.stations))
-	else stations(query, cb)
+	else index.search(query, (err, results) => {
+		if (!err) cb(results.hits)
+	})
 }
 
 completion(document.getElementById('station'), {
