@@ -12,6 +12,11 @@ const footer = h.footer({id: 'footer'}, [
 		, ' by '
 		, h.a({href: 'http://jannisr.de'}, '@derhuerst')
 		, '.'
+	]),
+	h.p(null, [
+		  'Search powered by '
+		, h.a({href: 'https://algolia.com/'}, 'Algolia')
+		, '.'
 	])
 ])
 
