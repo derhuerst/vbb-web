@@ -1,11 +1,11 @@
 #!/bin/sh
 
-rsync -rav --delete -e 'ssh -i ./.scaleway' \
+rsync -rav --delete \
 	--exclude '.*' \
 	--exclude node_modules \
 	. 'root@vbb-web.jannisr.de:~/vbb-web/'
 
-ssh -i ./.scaleway 'root@vbb-web.jannisr.de' "\
+ssh 'root@vbb-web.jannisr.de' "\
 cd ~/vbb-web
 npm i
 export NODE_ENV=production

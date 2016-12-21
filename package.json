@@ -11,26 +11,25 @@
 	"license":     "ISC",
 	"engines" :    {"node": ">=6"},
 	"dependencies": {
-		"config": "^1.21",
+		"config": "^1.24.0",
 		"express": "^4.14",
 		"express-force-ssl": "^0.3.2",
 		"compression": "^1.6.2",
 		"serve-static": "^1.11.1",
-		"nocache": "^1.0.1",
+		"nocache": "^2.0.0",
 		"co-express": "^1.2.2",
-		"vbb-stations": "^2.1",
+		"vbb-stations": "^3.1.0",
 		"vbb-client": "^0.4",
 		"pithy": "^0.0.4",
 		"vbb-parse-line": "^0.2",
 		"moment-timezone": "^0.5.5",
-		"vbb-short-station-name": "^0.1"
+		"vbb-short-station-name": "^0.2.0"
 	},
 	"devDependencies": {
 		"vbb-logos": "derhuerst/vbb-logos",
 		"component-emitter": "^1.2.1",
 		"horsey": "^3",
-		"vbb-client": "^0.3.3",
-		"browserify": "^13.0.1",
+		"browserify": "^13.1.1",
 		"uglify-js": "mishoo/UglifyJS2#harmony"
 	},
 	"scripts": {
@@ -43,7 +42,7 @@
 
 		"start":  "forever start --uid vbb-web -a app.js",
 		"stop":   "forever stop vbb-web",
-		"ssh":    "ssh -i ./scaleway root@vbb-web.jannisr.de",
+		"ssh":    "ssh root@vbb-web.jannisr.de",
 		"deploy": "./deploy"
 	}
 }
