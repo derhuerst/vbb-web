@@ -19,7 +19,7 @@
 		"nocache": "^2.0.0",
 		"co-express": "^1.2.2",
 		"vbb-stations": "^3.1.0",
-		"vbb-client": "^0.4",
+		"vbb-client": "^1.0.0",
 		"pithy": "^0.0.4",
 		"vbb-parse-line": "^0.2",
 		"moment-timezone": "^0.5.5",
@@ -33,7 +33,7 @@
 		"uglify-js": "mishoo/UglifyJS2#harmony"
 	},
 	"scripts": {
-		"icons":  "rm client/icons.svg; cp node_modules/vbb-logos/signets.svg client/icons.svg",
+		"icons":  "rm client/*.svg; cp node_modules/vbb-logos/*.svg client/",
 		"clean":  "rm client/*.bundle.js; rm client/*.bundle.min.js",
 		"bundle": "browserify client/index.js -o client/index.bundle.js",
 		"uglify": "uglifyjs -mc --screw-ie8 -o client/index.bundle.min.js -- client/index.bundle.js",

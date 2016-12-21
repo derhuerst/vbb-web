@@ -7,7 +7,7 @@ const icon = require('./icon')
 
 
 
-const line = (file, line) => {
+const line = (line) => {
 	let type
 	if (line === 'TXL') type = 'bus'
 	else {
@@ -18,7 +18,7 @@ const line = (file, line) => {
 			else if (parsed.express) type = 'express-' + type
 		}
 	}
-	return [icon(file, type), h.a({href: '#'}, line)]
+	return [icon(type + '.svg'), h.a({href: '#'}, line)]
 }
 
 module.exports = line
