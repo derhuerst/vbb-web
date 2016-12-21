@@ -18,7 +18,7 @@ const line = (line) => {
 			else if (parsed.express) type = 'express-' + type
 		}
 	}
-	return [icon(type + '.svg'), h.a({href: '#'}, line)]
+	return [icon(type + '.svg', type), h.a({href: '#'}, line)]
 }
 
 module.exports = line
