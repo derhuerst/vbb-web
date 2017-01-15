@@ -1,7 +1,26 @@
 'use strict'
 
-const template = require('./tpl/index')
+const fs = require('fs')
+const config = require('config')
+const https = require('https')
+const http = require('http')
 
-const index = (req, res) => res.status(200).end(template())
+const app = require('./app')
 
-module.exports = index
+const ssl = {
+	  key:  fs.readFileSync(config.key)
+	, cert: fs.readFileSync(config.cert)
+	, ca:   fs.readFileSync(config.ca)
+}
+
+
+
+https.createServer(ssl, app)
+.listen(config.ports.https, (err) => {
+	console.info(`Listening on ${config.ports.https}.`)
+})
+
+http.createServer(app)
+.listen(config.ports.http, () => {
+	console.info(`Listening on ${config.ports.http}.`)
+})
