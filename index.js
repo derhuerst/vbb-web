@@ -2,7 +2,7 @@
 
 const fs = require('fs')
 const config = require('config')
-const https = require('https')
+const spdy = require('spdy')
 const http = require('http')
 
 const app = require('./app')
@@ -15,7 +15,7 @@ const ssl = {
 
 
 
-https.createServer(ssl, app)
+spdy.createServer(ssl, app)
 .listen(config.ports.https, (err) => {
 	console.info(`Listening on ${config.ports.https}.`)
 })

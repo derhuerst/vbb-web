@@ -23,7 +23,8 @@
 		"pithy": "^0.0.4",
 		"vbb-parse-line": "^0.2",
 		"moment-timezone": "^0.5.5",
-		"vbb-short-station-name": "^0.2.0"
+		"vbb-short-station-name": "^0.2.0",
+		"spdy": "^3.4.4"
 	},
 	"devDependencies": {
 		"vbb-logos": "derhuerst/vbb-logos",
