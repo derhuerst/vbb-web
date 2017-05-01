@@ -10,7 +10,7 @@ EXPOSE 3000
 
 ENV HOSTNAME vbb-web.jannisr.de
 ENV PORT 3000
-ENV timezone Europe/Berlin
-ENV locale de
+ENV TIMEZONE Europe/Berlin
+ENV LOCALE de
 
 CMD ["npm", "start"]
