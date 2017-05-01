@@ -17,7 +17,7 @@ git clone https://github.com/derhuerst/vbb-web.git
 cd vbb-web
 npm install
 npm run build
-node app.js
+env TIMEZONE=Europe/Berlin LOCALE=de node index.js
 ```
 
 

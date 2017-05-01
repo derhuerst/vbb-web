@@ -4,16 +4,18 @@ const h = require('pithy')
 const moment = require('moment-timezone')
 const shorten = require('vbb-short-station-name')
 
-const cfg = require('config')
 const line = require('./lib/line')
 const head = require('./lib/head')
+
+const timezone = process.env.TIMEZONE
+const locale = process.env.LOCALE
 
 
 
 const time = (t) => h.time({
 	datetime: new Date(t).toISOString()
 }, [
-	moment(t).tz(cfg.timezone).locale(cfg.locale).format('LT')
+	moment(t).tz(timezone).locale(locale).format('LT')
 ])
 
 const direction = (s) => '→ ' + s

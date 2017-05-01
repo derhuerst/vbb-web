@@ -1,6 +1,5 @@
 'use strict'
 
-const config = require('config')
 const express = require('express')
 const compression = require('compression')
 const files = require('serve-static')
