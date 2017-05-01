@@ -11,9 +11,7 @@
 	"license":     "ISC",
 	"engines" :    {"node": ">=6"},
 	"dependencies": {
-		"config": "^1.24.0",
 		"express": "^4.14",
-		"express-force-ssl": "^0.3.2",
 		"compression": "^1.6.2",
 		"serve-static": "^1.11.1",
 		"nocache": "^2.0.0",
@@ -23,8 +21,7 @@
 		"pithy": "^0.0.4",
 		"vbb-parse-line": "^0.2",
 		"moment-timezone": "^0.5.5",
-		"vbb-short-station-name": "^0.2.0",
-		"spdy": "^3.4.4"
+		"vbb-short-station-name": "^0.2.0"
 	},
 	"devDependencies": {
 		"vbb-logos": "derhuerst/vbb-logos",
@@ -41,9 +38,7 @@
 		"build": "npm run icons; npm run clean; npm run bundle; npm run uglify",
 		"prepublish": "npm run build",
 
-		"start":  "forever start --uid vbb-web -a app.js",
-		"stop":   "forever stop vbb-web",
-		"ssh":    "ssh root@vbb-web.jannisr.de",
-		"deploy": "./deploy"
+		"start": "node index.js",
+		"ssh": "ssh root@vbb-web.jannisr.de"
 	}
 }

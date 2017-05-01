@@ -10,9 +10,6 @@ device.crt
 device.key
 root-ca.crt
 
-config/*
-!config/default.js
-
 client/*
 !client/*.bundle.min.js
 !client/icons.svg
