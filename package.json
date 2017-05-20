@@ -16,10 +16,10 @@
 		"serve-static": "^1.12.3",
 		"nocache": "^2.0.0",
 		"co-express": "^2.0.0",
-		"vbb-stations": "^3.1.0",
-		"vbb-client": "^1.0.0",
+		"vbb-stations": "^5.2.0",
+		"vbb-client": "^2.0.0",
 		"pithy": "^0.0.4",
-		"vbb-parse-line": "^0.2",
+		"vbb-parse-line": "^0.2.4",
 		"moment-timezone": "^0.5.13",
 		"vbb-short-station-name": "^0.2.0"
 	},

@@ -23,7 +23,7 @@ const direction = (s) => '→ ' + s
 const departures = (deps) =>
 	h.table('#departures', deps.map((dep) => h.tr(null, [
 		  h.td('.departures-when', [time(dep.when)])
-		, h.td('.departures-line', [line(dep.product.line)])
+		, h.td('.departures-line', [line(dep.line)])
 		, h.td('.departures-direction', [direction(dep.direction)])
 	])))
 

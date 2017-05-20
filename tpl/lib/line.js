@@ -8,17 +8,15 @@ const icon = require('./icon')
 
 
 const line = (line) => {
-	let type
-	if (line === 'TXL') type = 'bus'
-	else {
-		const parsed = parse(line)
-		type = parsed.type
-		if (parsed.type !== 'regional' && parsed.type !== 'express') {
-			if (parsed.metro) type = 'metro-' + type
-			else if (parsed.express) type = 'express-' + type
-		}
+	let type = line.product
+	if (line.type !== 'regional' && line.type !== 'express') {
+		if (line.metro) type = 'metro-' + type
+		else if (line.express) type = 'express-' + type
 	}
-	return [icon(type + '.svg', type), h.a({href: '#'}, line)]
+	return [
+		icon(type + '.svg', type),
+		h.a({href: '#'}, line.name)
+	]
 }
 
 module.exports = line
