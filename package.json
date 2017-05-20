@@ -11,23 +11,23 @@
 	"license":     "ISC",
 	"engines" :    {"node": ">=6"},
 	"dependencies": {
-		"express": "^4.14",
+		"express": "^4.15.3",
 		"compression": "^1.6.2",
-		"serve-static": "^1.11.1",
+		"serve-static": "^1.12.3",
 		"nocache": "^2.0.0",
-		"co-express": "^1.2.2",
+		"co-express": "^2.0.0",
 		"vbb-stations": "^3.1.0",
 		"vbb-client": "^1.0.0",
 		"pithy": "^0.0.4",
 		"vbb-parse-line": "^0.2",
-		"moment-timezone": "^0.5.5",
+		"moment-timezone": "^0.5.13",
 		"vbb-short-station-name": "^0.2.0"
 	},
 	"devDependencies": {
 		"vbb-logos": "derhuerst/vbb-logos",
 		"component-emitter": "^1.2.1",
 		"horsey": "^3",
-		"browserify": "^13.1.1",
+		"browserify": "^13.3.0",
 		"uglify-js": "mishoo/UglifyJS2#harmony"
 	},
 	"scripts": {
