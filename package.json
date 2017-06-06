@@ -28,7 +28,7 @@
 		"component-emitter": "^1.2.1",
 		"horsey": "^3",
 		"browserify": "^13.3.0",
-		"uglify-js": "mishoo/UglifyJS2#harmony"
+		"uglify-es": "^3.0.15"
 	},
 	"scripts": {
 		"icons":  "rm client/*.svg; cp node_modules/vbb-logos/*.svg client/",
