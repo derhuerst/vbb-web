@@ -33,8 +33,8 @@
 		"uglify-es": "^3.0.15"
 	},
 	"scripts": {
-		"icons":  "rm client/*.svg; cp node_modules/vbb-logos/*.svg client/",
-		"clean":  "rm client/*.bundle.js; rm client/*.bundle.min.js",
+		"icons":  "rm -f client/*.svg; cp node_modules/vbb-logos/*.svg client/",
+		"clean":  "rm -f client/*.bundle.js; rm -f client/*.bundle.min.js",
 		"bundle": "browserify client/index.js -o client/index.bundle.js",
 		"uglify": "uglifyjs -mc --screw-ie8 -o client/index.bundle.min.js -- client/index.bundle.js",
 		"build": "npm run icons; npm run clean; npm run bundle; npm run uglify",
