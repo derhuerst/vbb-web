@@ -19,7 +19,9 @@ const time = (t) => h.time({
 	moment(t).tz(timezone).locale(locale).format('LT')
 ])
 
-const delay = (d) => d > 1000 ? ` +${ms(d)}` : ''
+const delaySign = (d) => d > 0 ? '+' : '-'
+
+const delay = (d) => Math.abs(d) > 1000 ? ` ${delaySign(d)}${ms(Math.abs(d))}` : ''
 
 const direction = (s) => '→ ' + s
 
