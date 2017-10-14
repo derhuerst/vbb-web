@@ -22,6 +22,7 @@
 		"pithy": "^0.0.4",
 		"vbb-parse-line": "^0.2.4",
 		"moment-timezone": "^0.5.13",
+		"ms": "^2.0.0",
 		"vbb-short-station-name": "^0.2.0"
 	},
 	"devDependencies": {

@@ -2,6 +2,7 @@
 
 const h = require('pithy')
 const moment = require('moment-timezone')
+const ms = require('ms')
 const shorten = require('vbb-short-station-name')
 
 const line = require('./lib/line')
@@ -18,11 +19,16 @@ const time = (t) => h.time({
 	moment(t).tz(timezone).locale(locale).format('LT')
 ])
 
+const delay = (d) => d > 1000 ? ` +${ms(d)}` : ''
+
 const direction = (s) => '→ ' + s
 
 const departures = (deps) =>
 	h.table('#departures', deps.map((dep) => h.tr(null, [
-		  h.td('.departures-when', [time(dep.when)])
+		  h.td('.departures-when', [
+			  time(dep.when)
+			, h.span('.departures-delay', [delay(dep.delay)])
+		  ])
 		, h.td('.departures-line', [line(dep.line)])
 		, h.td('.departures-direction', [direction(dep.direction)])
 	])))

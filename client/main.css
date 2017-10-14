@@ -98,6 +98,7 @@ table td a, table td a:visited { color: #333 }
 
 
 .departures-when { white-space: nowrap }
+.departures-delay { color: #e74c3c }
 .departures-line { white-space: nowrap }
 
 
