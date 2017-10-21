@@ -35,6 +35,16 @@ const departures = (deps) =>
 		, h.td('.departures-direction', [direction(dep.direction)])
 	])))
 
+const moreDeparturesForm = (stationId, lastDeparture) =>
+	h.form({action: 'departures', method: 'GET'}, [
+		h.input({
+			type: 'hidden', name: 'station', value: stationId
+		}),
+		h.input({
+			type: 'hidden', name: 'when', value: new Date(lastDeparture).toISOString()
+		}),
+		h.input({type: 'submit', value: 'more departures'})
+	])
 
 
 const page = (station, deps) => {
@@ -46,6 +56,7 @@ const page = (station, deps) => {
 			h.body(null, [
 				  h.h1(null, station.name)
 				, departures(deps)
+				, moreDeparturesForm(station.id, deps[deps.length - 1].when)
 			])
 		])
 	].join('\n')
