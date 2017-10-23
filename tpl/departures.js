@@ -47,16 +47,20 @@ const moreDeparturesForm = (stationId, lastDeparture) =>
 	])
 
 
+const minute = 60 * 1000
+const noDepartures = h.p({}, 'no departures')
+
 const page = (station, deps) => {
 	station.name = shorten(station.name)
+	const lastDep = deps[deps.length - 1]
 	return [
 		  `<!DOCTYPE html>`
 		, h.html({lang: 'en'}, [
 			head(['main.css']),
 			h.body(null, [
 				  h.h1(null, station.name)
-				, departures(deps)
-				, moreDeparturesForm(station.id, deps[deps.length - 1].when)
+				, deps.lenth > 0 ? departures(deps) : noDepartures
+				, lastDep ? moreDeparturesForm(station.id, lastDep.when) : ''
 			])
 		])
 	].join('\n')
