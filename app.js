@@ -9,8 +9,6 @@ const nocache = require('nocache')
 const start = require('./start')
 const departures = require('./departures')
 
-
-
 const app = express()
 app.use(compression())
 app.use(files(path.join(__dirname, 'client')))
