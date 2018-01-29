@@ -12,6 +12,10 @@ const stations = (query, cb) => {
 		identifier: 'vbb-web'
 	})
 	.then(cb)
+	.catch((err) => {
+		console.error(err)
+		cb([])
+	})
 }
 
 module.exports = stations
