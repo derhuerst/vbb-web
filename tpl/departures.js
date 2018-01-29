@@ -59,7 +59,7 @@ const page = (station, deps) => {
 			head(['main.css']),
 			h.body(null, [
 				  h.h1(null, station.name)
-				, deps.lenth > 0 ? departures(deps) : noDepartures
+				, deps.length > 0 ? departures(deps) : noDepartures
 				, lastDep ? moreDeparturesForm(station.id, lastDep.when) : ''
 			])
 		])
