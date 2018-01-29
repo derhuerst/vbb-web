@@ -5,9 +5,6 @@ Thumbs.db
 node_modules
 npm-debug.log
 
-config/*
-!config/default.js
-
 client/*.svg
 client/*.bundle.js
 client/*.bundle.min.js
