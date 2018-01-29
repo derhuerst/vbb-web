@@ -36,7 +36,7 @@ const page = (station, deps) => [
 			, form(station)
 			, vbbTelegram
 			, footer
-			, h.script({type: 'application/javascript', src: 'index.bundle.min.js'})
+			, h.script({type: 'application/javascript', src: '.bundle.min.js'})
 		])
 	])
 ].join('\n')

@@ -34,18 +34,20 @@
 		"vbb-short-station-name": "^0.2.0"
 	},
 	"devDependencies": {
-		"vbb-logos": "derhuerst/vbb-logos",
+		"babel-core": "^6.26.0",
+		"babel-preset-env": "^1.6.1",
+		"babelify": "^8.0.0",
+		"browserify": "^15.2.0",
 		"component-emitter": "^1.2.1",
+		"envify": "^4.1.0",
 		"horsey": "^3",
-		"browserify": "^13.3.0",
-		"uglify-es": "^3.0.15"
+		"uglify-es": "^3.0.15",
+		"vbb-logos": "github:derhuerst/vbb-logos#v2"
 	},
 	"scripts": {
 		"icons": "rm -f client/*.svg; cp node_modules/vbb-logos/*.svg client/",
-		"clean": "rm -f client/*.bundle.js; rm -f client/*.bundle.min.js",
-		"bundle": "browserify client/index.js -o client/index.bundle.js",
-		"uglify": "uglifyjs -mc --screw-ie8 -o client/index.bundle.min.js -- client/index.bundle.js",
-		"build": "npm run icons; npm run clean; npm run bundle; npm run uglify",
+		"bundle": "env NODE_ENV=production browserify -g [babelify --presets env] -g envify client/index.js | uglifyjs -mc > client/bundle.min.js",
+		"build": "npm run icons && npm run bundle",
 		"prepublishOnly": "npm run build",
 		"start": "node index.js"
 	}
