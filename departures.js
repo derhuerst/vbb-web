@@ -20,6 +20,7 @@ const departures = (req, res) => {
 		res.status(200).end(template(station, deps))
 	})
 	.catch((err) => {
+		if (process.env.NODE_ENV === 'dev') console.error(err.stack)
 		const body = process.env.NODE_ENV === 'dev' ? err.stack : err.message
 		res.status(err.statusCode || 500).end(body)
 	})
