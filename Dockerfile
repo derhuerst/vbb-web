@@ -1,17 +1,21 @@
-FROM node
+FROM node:alpine
 
 WORKDIR /app
 ADD . /app
 
-RUN npm install -g npm@latest
-RUN npm install
-RUN npm run build
+RUN apk add --update git && \
+	npm install && \
+	npm run build && \
+	rm -rf node_modules && \
+	npm install --production && \
+	npm cache clean && \
+	rm -rf /tmp/* /var/cache/apk/*
 
 EXPOSE 3000
 
 ENV HOSTNAME vbb-web.jannisr.de
 ENV PORT 3000
 ENV TIMEZONE Europe/Berlin
-ENV LOCALE de
+ENV LOCALE de-DE
 
 CMD ["npm", "start"]
