@@ -23,7 +23,7 @@ const form = (station) => {
 		h.input({
 			type: 'text',
 			name: 'when',
-			value: 'in 10 min',
+			value: '+10 minutes',
 			placeholder: 'specify a time'
 		}),
 		h.input({

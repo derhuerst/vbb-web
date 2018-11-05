@@ -1,7 +1,7 @@
 'use strict'
 
 const h = require('pithy')
-const moment = require('moment-timezone')
+const { DateTime } = require('luxon')
 const ms = require('ms')
 const shorten = require('vbb-short-station-name')
 
@@ -9,13 +9,22 @@ const line = require('./lib/line')
 const head = require('./lib/head')
 
 const timezone = process.env.TIMEZONE
+if (!timezone) {
+	console.error('Missing TIMEZONE env var.')
+	process.exit(1)
+}
 const locale = process.env.LOCALE
+if (!locale) {
+	console.error('Missing LOCALE env var.')
+	process.exit(1)
+}
 
 const time = (t) => {
 	return h.time({
 		datetime: new Date(t).toISOString()
 	}, [
-		moment(t).tz(timezone).locale(locale).format('LT')
+		DateTime.fromISO(t, {zone: timezone, locale})
+		.toLocaleString(DateTime.TIME_SIMPLE)
 	])
 }
 
