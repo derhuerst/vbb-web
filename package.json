@@ -27,7 +27,7 @@
 		"nocache": "^2.0.0",
 		"pithy": "^0.0.4",
 		"serve-static": "^1.12.3",
-		"vbb-client": "^2.0.0",
+		"vbb-client": "^4.0.0",
 		"vbb-short-station-name": "^0.4.0",
 		"vbb-stations": "^6.1.0"
 	},
