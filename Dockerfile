@@ -8,7 +8,7 @@ RUN apk add --update git && \
 	npm run build && \
 	rm -rf node_modules && \
 	npm install --production && \
-	npm cache clean && \
+	npm cache clean --force && \
 	rm -rf /tmp/* /var/cache/apk/*
 
 EXPOSE 3000
