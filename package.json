@@ -32,10 +32,10 @@
 		"vbb-stations": "^6.1.0"
 	},
 	"devDependencies": {
-		"babel-core": "^6.26.0",
-		"babel-preset-env": "^1.6.1",
-		"babelify": "^8.0.0",
-		"browserify": "^15.2.0",
+		"@babel/core": "^7.1.2",
+		"@babel/preset-env": "^7.1.0",
+		"babelify": "^10.0.0",
+		"browserify": "^16.2.3",
 		"component-emitter": "^1.2.1",
 		"envify": "^4.1.0",
 		"horsey": "^3",
@@ -44,7 +44,7 @@
 	},
 	"scripts": {
 		"icons": "rm -f client/*.svg; cp node_modules/vbb-logos/*.svg client/",
-		"bundle": "env NODE_ENV=production browserify -g [babelify --presets env] -g envify client/index.js | uglifyjs -mc > client/bundle.min.js",
+		"bundle": "env NODE_ENV=production browserify -g [babelify --presets [ @babel/preset-env ] ] -g envify client/index.js | uglifyjs -mc > client/bundle.min.js",
 		"build": "npm run icons && npm run bundle",
 		"prepublishOnly": "npm run build",
 		"start": "node index.js"
