@@ -23,8 +23,7 @@ const departures = (req, res) => {
 
 	hafas.departures(station.id, {
 		when: req.query.when ? parseRelativeTime(req.query.when) : Date.now(),
-		duration: 20,
-		identifier: 'vbb-web'
+		duration: 20
 	})
 	.then((deps) => {
 		res.status(200).end(template(station, deps))
