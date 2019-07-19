@@ -97,8 +97,34 @@ table td a, table td a:visited { color: #333 }
 
 
 
-.departures-when { white-space: nowrap }
-.departures-delay { color: #e74c3c }
+.departures-when > * {
+	display: inline-block;
+	margin-right: .3em;
+}
+.departures-when time {
+	white-space: nowrap;
+}
+.departures-when .departure-on-time {
+	color: #2ecc71;
+}
+.departures-when .departure-minor-delay {
+	color: #f39c12;
+}
+.departures-when .departure-major-delay, .departures-when .departure-cancelled {
+	color: #e74c3c;
+}
+.departures-when > .departure-realtime {
+	position: relative;
+	margin-right: 1em;
+}
+.departures-when > .departure-realtime::after {
+	content: '⏱';
+	position: absolute;
+	top: 0;
+	left: 100%;
+	font-size: 60%;
+}
+
 .departures-line { white-space: nowrap }
 
 

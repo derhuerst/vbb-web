@@ -19,13 +19,32 @@ if (!locale) {
 	process.exit(1)
 }
 
-const time = (t) => {
-	return h.time({
-		datetime: new Date(t).toISOString()
-	}, [
-		DateTime.fromISO(t, {zone: timezone, locale})
-		.toLocaleString(DateTime.TIME_SIMPLE)
+const time = (iso, props = {}) => {
+	return h.time(Object.assign({datetime: iso}, props), [
+		DateTime.fromISO(iso, {zone: timezone, locale}).toLocaleString(DateTime.TIME_SIMPLE)
 	])
+}
+
+const realtimeAndPlanned = (t, delay) => {
+	const realtimeIso = new Date(t).toISOString()
+	const isRealtime = delay !== null
+	const isDelayed = isRealtime && delay > 0
+
+	const classes = [
+		isRealtime && 'departure-realtime',
+		isDelayed && 'departure-delayed'
+	].filter(cls => !!cls).join(' ')
+	const els = [
+		time(realtimeIso, classes ? {class: classes} : {})
+	]
+	if (isRealtime && delay !== 0) {
+		const plannedIso = new Date(new Date(t) - delay * 1000).toISOString()
+		els.push(h.del({}, [
+			time(plannedIso, {class: 'departure-delay'})
+		]))
+	}
+
+	return els
 }
 
 const delaySign = d => d > 0 ? '+' : '-'
@@ -35,12 +54,7 @@ const delay = d => Math.abs(d) > 1000 ? ' ' + delaySign(d) + ms(Math.abs(d)) : '
 const departures = (deps) => {
 	return h.table('#departures', deps.map((dep) => {
 		return h.tr(null, [
-			h.td('.departures-when', [
-				time(dep.when),
-				h.span('.departures-delay', [
-					delay(dep.delay)
-				])
-			]),
+			h.td('.departures-when', realtimeAndPlanned(dep.when, dep.delay)),
 			h.td('.departures-line', [
 				line(dep.line)
 			]),
