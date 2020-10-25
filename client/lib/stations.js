@@ -1,21 +1,35 @@
 'use strict'
 
-const createClient = require('vbb-client')
+const {homepage} = require('../../package.json')
 
-const client = createClient({
-	endpoint: 'https://1.bvg.transport.rest'
-})
+const ENDPOINT = 'https://v5.bvg.transport.rest/locations'
 
 const stations = (query, cb) => {
 	if (query.length === 0) return Promise.resolve([])
 
-	return client.locations(query, {
+	const searchParams = new URLSearchParams({
+		query,
 		fuzzy: true,
 		poi: false,
 		addresses: false,
-		stationLines: false,
+		linesOfStops: false,
 		results: 5,
-		identifier: 'vbb-web'
+	}).toString()
+
+	fetch(ENDPOINT + '?' + searchParams, {
+		headers: {
+			'user-agent': homepage,
+		},
+		mode: 'cors',
+		redirect: 'follow',
+	})
+	.then((res) => {
+		if (!res.ok) {
+			const err = new Error(res.statusText)
+			err.statusCode = res.status
+			throw err
+		}
+		return res.json()
 	})
 	.then(cb)
 	.catch((err) => {
